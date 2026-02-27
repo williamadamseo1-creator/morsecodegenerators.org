@@ -29,6 +29,10 @@ Production domain is set to `morsecodegenerators.org`:
 ## 5) Search setup
 - Add domain property in Google Search Console.
 - Submit `https://morsecodegenerators.org/sitemap.xml` after deployment.
+- If you update page templates, regenerate cluster pages:
+  - `./generate-pages.ps1`
+- Run SEO consistency checks before deploy:
+  - `./seo-check.ps1`
 
 ## 6) Post-launch checks
 - Confirm `/robots.txt` and `/sitemap.xml` are publicly accessible.

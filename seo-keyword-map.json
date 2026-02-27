@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-02-27",
+  "market": "us",
+  "source_csv": "C:/Users/PC/Downloads/google_us_all-keywords_2026-02-27_06-56-53.csv",
+  "rules": {
+    "one_primary_keyword_per_page": true,
+    "secondary_keywords_per_page_min": 3,
+    "secondary_keywords_per_page_max": 8,
+    "brand_safe_filter_enabled": true,
+    "off_topic_commercial_filter_enabled": true
+  },
+  "pages": [
+    {
+      "url_path": "/",
+      "primary_keyword": "morse code generator",
+      "secondary_keywords": [
+        "morse code converter",
+        "text to morse code",
+        "morse code to text"
+      ],
+      "search_intent": "translator",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/morse-code-translator/",
+      "primary_keyword": "morse code translator",
+      "secondary_keywords": [
+        "translate morse code",
+        "morse code translator to text",
+        "morse code to english",
+        "text to morse code"
+      ],
+      "search_intent": "translator",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/morse-code-alphabet/",
+      "primary_keyword": "morse code alphabet",
+      "secondary_keywords": [
+        "morse code letters",
+        "international morse code",
+        "letters to morse code",
+        "morse code chart"
+      ],
+      "search_intent": "reference",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/morse-code-chart/",
+      "primary_keyword": "morse code chart",
+      "secondary_keywords": [
+        "morse code sheet",
+        "morse code key",
+        "morse code alphabet chart",
+        "numbers in morse code"
+      ],
+      "search_intent": "reference",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/morse-code-numbers/",
+      "primary_keyword": "morse code numbers",
+      "secondary_keywords": [
+        "number morse code translator",
+        "morse code number translator",
+        "number morse code",
+        "numbers in morse code"
+      ],
+      "search_intent": "reference",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/sos-in-morse-code/",
+      "primary_keyword": "sos in morse code",
+      "secondary_keywords": [
+        "sos morse code",
+        "morse code sos",
+        "what is sos in morse code",
+        "...---... morse code"
+      ],
+      "search_intent": "phrase",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/i-love-you-in-morse-code/",
+      "primary_keyword": "i love you in morse code",
+      "secondary_keywords": [
+        "i love you morse code",
+        "morse code for i love you",
+        "hello in morse code",
+        "words in morse code"
+      ],
+      "search_intent": "phrase",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/how-to-read-morse-code/",
+      "primary_keyword": "how to read morse code",
+      "secondary_keywords": [
+        "decode morse code",
+        "morse code to english",
+        "translate morse code to english",
+        "how to write in morse code"
+      ],
+      "search_intent": "learning",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/how-to-learn-morse-code/",
+      "primary_keyword": "how to learn morse code",
+      "secondary_keywords": [
+        "learn morse code",
+        "morse code meaning",
+        "english to morse code translator",
+        "how does morse code work"
+      ],
+      "search_intent": "learning",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/how-does-morse-code-work/",
+      "primary_keyword": "how does morse code work",
+      "secondary_keywords": [
+        "what is morse code",
+        "morse code meaning",
+        "international morse code",
+        "morse code encoder"
+      ],
+      "search_intent": "learning",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/morse-code-translator-audio/",
+      "primary_keyword": "morse code translator audio",
+      "secondary_keywords": [
+        "morse code audio translater",
+        "morse code translate",
+        "english to morse",
+        "decode morse code"
+      ],
+      "search_intent": "media",
+      "priority_tier": "P1",
+      "exclude": false
+    },
+    {
+      "url_path": "/morse-code-translator-picture/",
+      "primary_keyword": "morse code translator picture",
+      "secondary_keywords": [
+        "morse code image translator",
+        "morse code translator online",
+        "translate morse code",
+        "morse code trans"
+      ],
+      "search_intent": "media",
+      "priority_tier": "P1",
+      "exclude": false
+    }
+  ],
+  "excluded_keywords": [
+    {
+      "keyword": "morse code bracelet",
+      "reason": "off_topic_commercial"
+    },
+    {
+      "keyword": "morse code necklace",
+      "reason": "off_topic_commercial"
+    },
+    {
+      "keyword": "morse code tattoo",
+      "reason": "off_topic_commercial"
+    },
+    {
+      "keyword": "offensive phrase terms",
+      "reason": "brand_safety"
+    }
+  ]
+}
