@@ -73,7 +73,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
       <nav aria-label="Site navigation">
         <a href="/">Home</a>
         <a href="/morse-code-translator/">Translator</a>
@@ -120,6 +120,32 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Audio Trainer</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Playback Input</h3>
+          <textarea id="audio-trainer-text" rows="5" placeholder="Enter text, e.g. SOS NEED HELP"></textarea>
+          <label for="audio-wpm">Playback speed: <strong id="audio-wpm-label">18 WPM</strong></label>
+          <input id="audio-wpm" type="range" min="5" max="30" step="1" value="18">
+          <div class="button-row">
+            <button type="button" id="audio-play-btn">Play Audio</button>
+            <button type="button" id="audio-stop-btn" class="ghost">Stop</button>
+          </div>
+          <p id="audio-status" class="small-status"></p>
+        </div>
+        <div class="mini-tool">
+          <h3>Quick Presets</h3>
+          <div class="chip-row">
+            <button type="button" class="chip-btn" data-fill-text="SOS">SOS</button>
+            <button type="button" class="chip-btn" data-fill-text="HELLO">HELLO</button>
+            <button type="button" class="chip-btn" data-fill-text="NEED HELP">NEED HELP</button>
+          </div>
+          <p class="muted">Tip: start at 10-12 WPM, then increase gradually.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel reveal">
       <h2>Detailed Explanation</h2>
       <p>Media intent queries usually come from audio or image decoding tasks. This page explains practical workflows for converting non-text clues into valid Morse input.</p>
       <p>When the source is noisy or blurry, decode in small chunks first. Short chunk validation reduces error rate and speeds up final message reconstruction.</p>
@@ -156,9 +182,9 @@
     <section class="panel reveal">
       <h2>Practice Prompts</h2>
       <ul class="example-list">
-        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
-        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
-        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+        <li>Play audio for SOS at 12 WPM.</li>
+        <li>Play a 3-word message and decode by ear.</li>
+        <li>Increase WPM by 2 only after accurate playback.</li>
       </ul>
     </section>
 

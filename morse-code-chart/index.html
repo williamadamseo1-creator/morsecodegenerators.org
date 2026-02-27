@@ -73,7 +73,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
       <nav aria-label="Site navigation">
         <a href="/">Home</a>
         <a href="/morse-code-translator/">Translator</a>
@@ -120,6 +120,18 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Chart Search Utility</h2>
+      <div class="mini-tool">
+        <h3>Search by Letter or Morse</h3>
+        <div class="inline-fields">
+          <input id="chart-query-input" type="search" placeholder="Type A or .-">
+          <button type="button" id="chart-query-run">Lookup</button>
+        </div>
+        <p id="chart-query-output" class="mini-output"></p>
+      </div>
+    </section>
+
+    <section class="panel reveal">
       <h2>Detailed Explanation</h2>
       <p>Reference pages are designed for fast lookup. Use this guide when you need exact symbols for letters, numbers, or chart-style memorization during study sessions.</p>
       <p>Pair this page with the converter to move from static reference to active practice. Active encode/decode drills improve recall much faster than passive reading.</p>
@@ -157,9 +169,9 @@
     <section class="panel reveal">
       <h2>Practice Prompts</h2>
       <ul class="example-list">
-        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
-        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
-        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+        <li>Find Morse for each letter in CHART.</li>
+        <li>Decode: -.- . -.-- / ... .... . . -</li>
+        <li>Use chart lookup for 5 punctuation symbols.</li>
       </ul>
     </section>
 

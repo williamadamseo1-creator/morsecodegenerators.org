@@ -73,7 +73,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
       <nav aria-label="Site navigation">
         <a href="/">Home</a>
         <a href="/morse-code-translator/">Translator</a>
@@ -120,6 +120,25 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Reading Quiz</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Quiz Code</h3>
+          <p id="read-quiz-code" class="mono-output">Press Start Quiz</p>
+          <button type="button" id="read-quiz-start">Start Quiz</button>
+        </div>
+        <div class="mini-tool">
+          <h3>Your Decoded Text</h3>
+          <input id="read-quiz-answer" type="text" placeholder="Type decoded word">
+          <div class="button-row">
+            <button type="button" id="read-quiz-check">Check</button>
+          </div>
+          <p id="read-quiz-feedback" class="small-status"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel reveal">
       <h2>Detailed Explanation</h2>
       <p>Learning intent needs structure, not only symbol lists. This page combines method, examples, and practice prompts so beginners can build skill steadily.</p>
       <p>Use short, repeatable sessions. Consistent daily practice with immediate feedback from the converter gives better retention than occasional long sessions.</p>
@@ -159,9 +178,9 @@
     <section class="panel reveal">
       <h2>Practice Prompts</h2>
       <ul class="example-list">
-        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
-        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
-        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+        <li>Start one reading quiz and decode the shown code.</li>
+        <li>Decode: .-. . .- -.. / .-- . .-.. .-..</li>
+        <li>Practice five words and track mistakes.</li>
       </ul>
     </section>
 

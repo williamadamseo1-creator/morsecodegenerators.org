@@ -407,11 +407,331 @@ function Get-UseCases($page) {
 }
 
 function Get-PracticePrompts($page) {
-  return @(
-    "Convert this phrase to Morse: HELLO TEAM READY",
-    "Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.",
-    "Create a custom sentence, convert it, then decode back to validate."
-  )
+  switch ($page.slug) {
+    "morse-code-translator" {
+      return @(
+        "Convert this phrase to Morse: HELLO TEAM READY",
+        "Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.",
+        "Create a custom sentence, convert it, then decode back to validate."
+      )
+    }
+    "morse-code-alphabet" {
+      return @(
+        "Encode the letters in your name.",
+        "Decode: --. . -. . .-. .- - --- .-.",
+        "Practice 10 random letters and verify with the lookup tool."
+      )
+    }
+    "morse-code-chart" {
+      return @(
+        "Find Morse for each letter in CHART.",
+        "Decode: -.- . -.-- / ... .... . . -",
+        "Use chart lookup for 5 punctuation symbols."
+      )
+    }
+    "morse-code-numbers" {
+      return @(
+        "Encode this number: 2026",
+        "Decode: .---- ----. ----. -----",
+        "Run three random number drills and score accuracy."
+      )
+    }
+    "sos-in-morse-code" {
+      return @(
+        "Encode: SOS NEED HELP",
+        "Decode: ... --- ... / -. --- .--",
+        "Generate one random distress phrase and reverse-check."
+      )
+    }
+    "i-love-you-in-morse-code" {
+      return @(
+        "Encode: I LOVE YOU ALWAYS",
+        "Decode: .... .. / .. / -.-. .- .-. .",
+        "Use custom phrase builder and verify output."
+      )
+    }
+    "how-to-read-morse-code" {
+      return @(
+        "Start one reading quiz and decode the shown code.",
+        "Decode: .-. . .- -.. / .-- . .-.. .-..",
+        "Practice five words and track mistakes."
+      )
+    }
+    "how-to-learn-morse-code" {
+      return @(
+        "Complete today checklist items before next drill.",
+        "Encode 10 words and decode 10 words.",
+        "Review weak symbols and repeat daily plan."
+      )
+    }
+    "how-does-morse-code-work" {
+      return @(
+        "Set WPM to 18 and note dot/dash durations.",
+        "Compare timings at 10 WPM vs 25 WPM.",
+        "Test one phrase with timing-aware spacing."
+      )
+    }
+    "morse-code-translator-audio" {
+      return @(
+        "Play audio for SOS at 12 WPM.",
+        "Play a 3-word message and decode by ear.",
+        "Increase WPM by 2 only after accurate playback."
+      )
+    }
+    "morse-code-translator-picture" {
+      return @(
+        "Paste a noisy Morse snippet and clean it.",
+        "Decode cleaned output and verify by reverse conversion.",
+        "Fill converter from cleaned image symbols."
+      )
+    }
+    default {
+      return @(
+        "Convert a short phrase and verify in reverse.",
+        "Decode a Morse example from this page.",
+        "Practice one minute daily for better retention."
+      )
+    }
+  }
+}
+
+function Get-SpecialToolHtml($page) {
+  switch ($page.slug) {
+    "morse-code-translator" {
+      return @'
+    <section class="panel reveal">
+      <h2>Batch Line Converter</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Line Input</h3>
+          <p>Paste multiple lines and convert each line in one click.</p>
+          <textarea id="batch-lines-input" rows="6" placeholder="HELLO&#10;NEED HELP&#10;GOOD LUCK"></textarea>
+          <div class="button-row">
+            <button type="button" id="batch-lines-run">Convert Lines</button>
+            <button type="button" id="batch-lines-clear" class="ghost">Clear</button>
+          </div>
+        </div>
+        <div class="mini-tool">
+          <h3>Batch Output</h3>
+          <p class="muted">Each line is converted separately.</p>
+          <pre id="batch-lines-output" class="mono-output"></pre>
+        </div>
+      </div>
+    </section>
+'@
+    }
+    "morse-code-alphabet" {
+      return @'
+    <section class="panel reveal">
+      <h2>Alphabet Lookup Tool</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Character to Morse</h3>
+          <div class="inline-fields">
+            <input id="alpha-char-input" type="text" maxlength="1" placeholder="A">
+            <button type="button" id="alpha-char-run">Find</button>
+          </div>
+          <p id="alpha-char-output" class="mini-output"></p>
+        </div>
+        <div class="mini-tool">
+          <h3>Morse to Character</h3>
+          <div class="inline-fields">
+            <input id="alpha-morse-input" type="text" placeholder=".-">
+            <button type="button" id="alpha-morse-run">Find</button>
+          </div>
+          <p id="alpha-morse-output" class="mini-output"></p>
+        </div>
+      </div>
+    </section>
+'@
+    }
+    "morse-code-chart" {
+      return @'
+    <section class="panel reveal">
+      <h2>Chart Search Utility</h2>
+      <div class="mini-tool">
+        <h3>Search by Letter or Morse</h3>
+        <div class="inline-fields">
+          <input id="chart-query-input" type="search" placeholder="Type A or .-">
+          <button type="button" id="chart-query-run">Lookup</button>
+        </div>
+        <p id="chart-query-output" class="mini-output"></p>
+      </div>
+    </section>
+'@
+    }
+    "morse-code-numbers" {
+      return @'
+    <section class="panel reveal">
+      <h2>Random Number Drill</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Generate Number</h3>
+          <p>Train speed by converting random five-digit numbers.</p>
+          <p><strong id="number-drill-target" data-target="">Press Generate</strong></p>
+          <div class="button-row">
+            <button type="button" id="number-drill-generate">Generate</button>
+          </div>
+        </div>
+        <div class="mini-tool">
+          <h3>Your Morse Answer</h3>
+          <input id="number-drill-answer" type="text" placeholder=".---- ..--- ...--">
+          <div class="button-row">
+            <button type="button" id="number-drill-check">Check</button>
+          </div>
+          <p id="number-drill-feedback" class="small-status"></p>
+        </div>
+      </div>
+    </section>
+'@
+    }
+    "sos-in-morse-code" {
+      return @'
+    <section class="panel reveal">
+      <h2>SOS Phrase Builder</h2>
+      <p>Load common distress phrases directly into the converter.</p>
+      <div class="chip-row">
+        <button type="button" class="chip-btn" data-fill-text="SOS">SOS</button>
+        <button type="button" class="chip-btn" data-fill-text="SOS NEED HELP">SOS NEED HELP</button>
+        <button type="button" class="chip-btn" data-fill-text="MAYDAY SOS NOW">MAYDAY SOS NOW</button>
+        <button type="button" id="sos-random-call" class="chip-btn">Random Distress Phrase</button>
+      </div>
+      <p id="sos-builder-status" class="small-status"></p>
+    </section>
+'@
+    }
+    "i-love-you-in-morse-code" {
+      return @'
+    <section class="panel reveal">
+      <h2>Phrase Builder</h2>
+      <div class="chip-row">
+        <button type="button" class="chip-btn" data-fill-text="I LOVE YOU">I LOVE YOU</button>
+        <button type="button" class="chip-btn" data-fill-text="I MISS YOU">I MISS YOU</button>
+        <button type="button" class="chip-btn" data-fill-text="YOU MEAN A LOT">YOU MEAN A LOT</button>
+      </div>
+      <div class="mini-tool">
+        <h3>Custom Phrase</h3>
+        <div class="inline-fields">
+          <input id="love-custom-text" type="text" placeholder="Type your phrase">
+          <button type="button" id="love-apply-custom">Load</button>
+        </div>
+        <p id="love-builder-status" class="small-status"></p>
+      </div>
+    </section>
+'@
+    }
+    "how-to-read-morse-code" {
+      return @'
+    <section class="panel reveal">
+      <h2>Reading Quiz</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Quiz Code</h3>
+          <p id="read-quiz-code" class="mono-output">Press Start Quiz</p>
+          <button type="button" id="read-quiz-start">Start Quiz</button>
+        </div>
+        <div class="mini-tool">
+          <h3>Your Decoded Text</h3>
+          <input id="read-quiz-answer" type="text" placeholder="Type decoded word">
+          <div class="button-row">
+            <button type="button" id="read-quiz-check">Check</button>
+          </div>
+          <p id="read-quiz-feedback" class="small-status"></p>
+        </div>
+      </div>
+    </section>
+'@
+    }
+    "how-to-learn-morse-code" {
+      return @'
+    <section class="panel reveal">
+      <h2>Daily Learning Checklist</h2>
+      <div class="checklist">
+        <label><input type="checkbox" data-learn-task="letters-review"> Review 10 letter symbols</label>
+        <label><input type="checkbox" data-learn-task="number-review"> Practice 5 number codes</label>
+        <label><input type="checkbox" data-learn-task="encode-drill"> Encode 10 words</label>
+        <label><input type="checkbox" data-learn-task="decode-drill"> Decode 10 words</label>
+        <label><input type="checkbox" data-learn-task="phrase-drill"> Complete one phrase drill</label>
+      </div>
+      <p id="learn-progress" class="small-status"></p>
+    </section>
+'@
+    }
+    "how-does-morse-code-work" {
+      return @'
+    <section class="panel reveal">
+      <h2>Timing Calculator</h2>
+      <div class="mini-tool">
+        <label for="timing-wpm">Words per minute (WPM)</label>
+        <input id="timing-wpm" type="range" min="5" max="35" step="1" value="18">
+        <div class="metric-row">
+          <div class="metric-card"><span>Dot</span><strong id="timing-dot"></strong></div>
+          <div class="metric-card"><span>Dash</span><strong id="timing-dash"></strong></div>
+          <div class="metric-card"><span>Letter Gap</span><strong id="timing-letter-gap"></strong></div>
+          <div class="metric-card"><span>Word Gap</span><strong id="timing-word-gap"></strong></div>
+        </div>
+      </div>
+    </section>
+'@
+    }
+    "morse-code-translator-audio" {
+      return @'
+    <section class="panel reveal">
+      <h2>Audio Trainer</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Playback Input</h3>
+          <textarea id="audio-trainer-text" rows="5" placeholder="Enter text, e.g. SOS NEED HELP"></textarea>
+          <label for="audio-wpm">Playback speed: <strong id="audio-wpm-label">18 WPM</strong></label>
+          <input id="audio-wpm" type="range" min="5" max="30" step="1" value="18">
+          <div class="button-row">
+            <button type="button" id="audio-play-btn">Play Audio</button>
+            <button type="button" id="audio-stop-btn" class="ghost">Stop</button>
+          </div>
+          <p id="audio-status" class="small-status"></p>
+        </div>
+        <div class="mini-tool">
+          <h3>Quick Presets</h3>
+          <div class="chip-row">
+            <button type="button" class="chip-btn" data-fill-text="SOS">SOS</button>
+            <button type="button" class="chip-btn" data-fill-text="HELLO">HELLO</button>
+            <button type="button" class="chip-btn" data-fill-text="NEED HELP">NEED HELP</button>
+          </div>
+          <p class="muted">Tip: start at 10-12 WPM, then increase gradually.</p>
+        </div>
+      </div>
+    </section>
+'@
+    }
+    "morse-code-translator-picture" {
+      return @'
+    <section class="panel reveal">
+      <h2>Image-to-Morse Cleanup Tool</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Raw Transcription</h3>
+          <textarea id="image-raw-input" rows="6" placeholder="Paste symbols copied from image/OCR"></textarea>
+          <div class="button-row">
+            <button type="button" id="image-clean-btn">Clean Symbols</button>
+            <button type="button" id="image-decode-btn">Decode</button>
+          </div>
+        </div>
+        <div class="mini-tool">
+          <h3>Output</h3>
+          <p class="muted">Cleaned Morse</p>
+          <pre id="image-clean-output" class="mono-output"></pre>
+          <p class="muted">Decoded Text</p>
+          <pre id="image-decode-output" class="mono-output"></pre>
+          <button type="button" id="image-fill-converter">Fill Main Converter</button>
+        </div>
+      </div>
+    </section>
+'@
+    }
+    default {
+      return ""
+    }
+  }
 }
 
 foreach ($p in $pages) {
@@ -423,6 +743,7 @@ foreach ($p in $pages) {
   $deepDiveHtml = Build-Paragraphs (Get-DeepDive $p)
   $useCasesHtml = Build-List (Get-UseCases $p)
   $practiceHtml = Build-List (Get-PracticePrompts $p)
+  $specialToolHtml = Get-SpecialToolHtml $p
 
   $faqEntities = @()
   foreach ($f in $p.faqs) {
@@ -482,7 +803,7 @@ $schemaJson
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
 $baseNav    </div>
   </header>
 
@@ -520,6 +841,8 @@ $baseNav    </div>
       <p id="converter-status" class="status" aria-live="polite">Ready.</p>
       <p id="converter-warning" class="warning" aria-live="polite"></p>
     </section>
+
+$specialToolHtml
 
     <section class="panel reveal">
       <h2>Detailed Explanation</h2>

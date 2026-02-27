@@ -73,7 +73,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
       <nav aria-label="Site navigation">
         <a href="/">Home</a>
         <a href="/morse-code-translator/">Translator</a>
@@ -120,6 +120,28 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Image-to-Morse Cleanup Tool</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Raw Transcription</h3>
+          <textarea id="image-raw-input" rows="6" placeholder="Paste symbols copied from image/OCR"></textarea>
+          <div class="button-row">
+            <button type="button" id="image-clean-btn">Clean Symbols</button>
+            <button type="button" id="image-decode-btn">Decode</button>
+          </div>
+        </div>
+        <div class="mini-tool">
+          <h3>Output</h3>
+          <p class="muted">Cleaned Morse</p>
+          <pre id="image-clean-output" class="mono-output"></pre>
+          <p class="muted">Decoded Text</p>
+          <pre id="image-decode-output" class="mono-output"></pre>
+          <button type="button" id="image-fill-converter">Fill Main Converter</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel reveal">
       <h2>Detailed Explanation</h2>
       <p>Media intent queries usually come from audio or image decoding tasks. This page explains practical workflows for converting non-text clues into valid Morse input.</p>
       <p>When the source is noisy or blurry, decode in small chunks first. Short chunk validation reduces error rate and speeds up final message reconstruction.</p>
@@ -156,9 +178,9 @@
     <section class="panel reveal">
       <h2>Practice Prompts</h2>
       <ul class="example-list">
-        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
-        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
-        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+        <li>Paste a noisy Morse snippet and clean it.</li>
+        <li>Decode cleaned output and verify by reverse conversion.</li>
+        <li>Fill converter from cleaned image symbols.</li>
       </ul>
     </section>
 

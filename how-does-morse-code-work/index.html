@@ -73,7 +73,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
       <nav aria-label="Site navigation">
         <a href="/">Home</a>
         <a href="/morse-code-translator/">Translator</a>
@@ -120,6 +120,20 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Timing Calculator</h2>
+      <div class="mini-tool">
+        <label for="timing-wpm">Words per minute (WPM)</label>
+        <input id="timing-wpm" type="range" min="5" max="35" step="1" value="18">
+        <div class="metric-row">
+          <div class="metric-card"><span>Dot</span><strong id="timing-dot"></strong></div>
+          <div class="metric-card"><span>Dash</span><strong id="timing-dash"></strong></div>
+          <div class="metric-card"><span>Letter Gap</span><strong id="timing-letter-gap"></strong></div>
+          <div class="metric-card"><span>Word Gap</span><strong id="timing-word-gap"></strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel reveal">
       <h2>Detailed Explanation</h2>
       <p>Learning intent needs structure, not only symbol lists. This page combines method, examples, and practice prompts so beginners can build skill steadily.</p>
       <p>Use short, repeatable sessions. Consistent daily practice with immediate feedback from the converter gives better retention than occasional long sessions.</p>
@@ -156,9 +170,9 @@
     <section class="panel reveal">
       <h2>Practice Prompts</h2>
       <ul class="example-list">
-        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
-        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
-        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+        <li>Set WPM to 18 and note dot/dash durations.</li>
+        <li>Compare timings at 10 WPM vs 25 WPM.</li>
+        <li>Test one phrase with timing-aware spacing.</li>
       </ul>
     </section>
 

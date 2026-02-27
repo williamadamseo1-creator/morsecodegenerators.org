@@ -73,7 +73,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
       <nav aria-label="Site navigation">
         <a href="/">Home</a>
         <a href="/morse-code-translator/">Translator</a>
@@ -120,6 +120,18 @@
     </section>
 
     <section class="panel reveal">
+      <h2>SOS Phrase Builder</h2>
+      <p>Load common distress phrases directly into the converter.</p>
+      <div class="chip-row">
+        <button type="button" class="chip-btn" data-fill-text="SOS">SOS</button>
+        <button type="button" class="chip-btn" data-fill-text="SOS NEED HELP">SOS NEED HELP</button>
+        <button type="button" class="chip-btn" data-fill-text="MAYDAY SOS NOW">MAYDAY SOS NOW</button>
+        <button type="button" id="sos-random-call" class="chip-btn">Random Distress Phrase</button>
+      </div>
+      <p id="sos-builder-status" class="small-status"></p>
+    </section>
+
+    <section class="panel reveal">
       <h2>Detailed Explanation</h2>
       <p>Phrase-focused pages help users solve common real searches quickly. You get exact sequence examples plus spacing rules so your output remains readable.</p>
       <p>After copying a phrase result, always run reverse conversion once. This catches spacing mistakes before you share the final Morse message.</p>
@@ -156,9 +168,9 @@
     <section class="panel reveal">
       <h2>Practice Prompts</h2>
       <ul class="example-list">
-        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
-        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
-        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+        <li>Encode: SOS NEED HELP</li>
+        <li>Decode: ... --- ... / -. --- .--</li>
+        <li>Generate one random distress phrase and reverse-check.</li>
       </ul>
     </section>
 

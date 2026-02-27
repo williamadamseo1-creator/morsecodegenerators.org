@@ -73,7 +73,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
       <nav aria-label="Site navigation">
         <a href="/">Home</a>
         <a href="/morse-code-translator/">Translator</a>
@@ -120,6 +120,28 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Alphabet Lookup Tool</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Character to Morse</h3>
+          <div class="inline-fields">
+            <input id="alpha-char-input" type="text" maxlength="1" placeholder="A">
+            <button type="button" id="alpha-char-run">Find</button>
+          </div>
+          <p id="alpha-char-output" class="mini-output"></p>
+        </div>
+        <div class="mini-tool">
+          <h3>Morse to Character</h3>
+          <div class="inline-fields">
+            <input id="alpha-morse-input" type="text" placeholder=".-">
+            <button type="button" id="alpha-morse-run">Find</button>
+          </div>
+          <p id="alpha-morse-output" class="mini-output"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel reveal">
       <h2>Detailed Explanation</h2>
       <p>Reference pages are designed for fast lookup. Use this guide when you need exact symbols for letters, numbers, or chart-style memorization during study sessions.</p>
       <p>Pair this page with the converter to move from static reference to active practice. Active encode/decode drills improve recall much faster than passive reading.</p>
@@ -159,9 +181,9 @@
     <section class="panel reveal">
       <h2>Practice Prompts</h2>
       <ul class="example-list">
-        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
-        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
-        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+        <li>Encode the letters in your name.</li>
+        <li>Decode: --. . -. . .-. .- - --- .-.</li>
+        <li>Practice 10 random letters and verify with the lookup tool.</li>
       </ul>
     </section>
 

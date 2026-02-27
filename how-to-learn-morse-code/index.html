@@ -73,7 +73,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
       <nav aria-label="Site navigation">
         <a href="/">Home</a>
         <a href="/morse-code-translator/">Translator</a>
@@ -120,6 +120,18 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Daily Learning Checklist</h2>
+      <div class="checklist">
+        <label><input type="checkbox" data-learn-task="letters-review"> Review 10 letter symbols</label>
+        <label><input type="checkbox" data-learn-task="number-review"> Practice 5 number codes</label>
+        <label><input type="checkbox" data-learn-task="encode-drill"> Encode 10 words</label>
+        <label><input type="checkbox" data-learn-task="decode-drill"> Decode 10 words</label>
+        <label><input type="checkbox" data-learn-task="phrase-drill"> Complete one phrase drill</label>
+      </div>
+      <p id="learn-progress" class="small-status"></p>
+    </section>
+
+    <section class="panel reveal">
       <h2>Detailed Explanation</h2>
       <p>Learning intent needs structure, not only symbol lists. This page combines method, examples, and practice prompts so beginners can build skill steadily.</p>
       <p>Use short, repeatable sessions. Consistent daily practice with immediate feedback from the converter gives better retention than occasional long sessions.</p>
@@ -156,9 +168,9 @@
     <section class="panel reveal">
       <h2>Practice Prompts</h2>
       <ul class="example-list">
-        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
-        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
-        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+        <li>Complete today checklist items before next drill.</li>
+        <li>Encode 10 words and decode 10 words.</li>
+        <li>Review weak symbols and repeat daily plan.</li>
       </ul>
     </section>
 

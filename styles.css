@@ -102,6 +102,16 @@ a:focus-visible {
   letter-spacing: 0.3px;
 }
 
+.brand-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand-link:hover,
+.brand-link:focus-visible {
+  color: #c0f1ff;
+}
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -279,6 +289,22 @@ textarea {
   min-height: 170px;
 }
 
+input[type="text"],
+input[type="number"],
+input[type="search"] {
+  width: 100%;
+  border: 1px solid rgba(157, 176, 218, 0.3);
+  border-radius: 10px;
+  background: #0a0f2c;
+  color: var(--text);
+  font: inherit;
+  padding: 0.62rem 0.68rem;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
 textarea:focus {
   outline: 2px solid rgba(0, 214, 166, 0.4);
   outline-offset: 1px;
@@ -289,6 +315,107 @@ textarea:focus {
   flex-wrap: wrap;
   gap: 0.65rem;
   margin-top: 0.9rem;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.mini-tool {
+  border: 1px solid rgba(157, 176, 218, 0.25);
+  border-radius: 12px;
+  background: rgba(8, 12, 38, 0.7);
+  padding: 0.85rem;
+}
+
+.mini-tool h3 {
+  margin-bottom: 0.35rem;
+}
+
+.mini-tool p {
+  margin: 0.35rem 0;
+  color: var(--muted);
+}
+
+.mini-output {
+  min-height: 1.5rem;
+  margin-top: 0.48rem;
+  color: #c4ffe9;
+  font-weight: 600;
+}
+
+.mono-output {
+  background: rgba(5, 9, 27, 0.92);
+  border: 1px solid rgba(157, 176, 218, 0.2);
+  border-radius: 10px;
+  padding: 0.6rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-top: 0.5rem;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip-btn {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(157, 176, 218, 0.3);
+  background: rgba(9, 13, 40, 0.95);
+  color: var(--text);
+}
+
+.chip-btn:hover,
+.chip-btn:focus-visible {
+  background: rgba(20, 31, 82, 0.95);
+}
+
+.inline-fields {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.small-status {
+  margin-top: 0.5rem;
+  color: #b6f4e7;
+}
+
+.checklist {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.checklist label {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  font-weight: 500;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+}
+
+.metric-card {
+  border: 1px solid rgba(157, 176, 218, 0.22);
+  border-radius: 10px;
+  background: rgba(8, 12, 38, 0.7);
+  padding: 0.56rem;
+}
+
+.metric-card strong {
+  display: block;
+  margin-top: 0.2rem;
 }
 
 button {
@@ -459,7 +586,9 @@ summary {
 @media (max-width: 880px) {
   .grid-two,
   .cards,
-  .link-grid {
+  .link-grid,
+  .tool-grid,
+  .metric-row {
     grid-template-columns: 1fr;
   }
 

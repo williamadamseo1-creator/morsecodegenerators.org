@@ -73,7 +73,7 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <p class="brand">Morse Code Generator</p>
+      <a class="brand brand-link" href="/">Morse Code Generator</a>
       <nav aria-label="Site navigation">
         <a href="/">Home</a>
         <a href="/morse-code-translator/">Translator</a>
@@ -117,6 +117,26 @@
       </div>
       <p id="converter-status" class="status" aria-live="polite">Ready.</p>
       <p id="converter-warning" class="warning" aria-live="polite"></p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Batch Line Converter</h2>
+      <div class="tool-grid">
+        <div class="mini-tool">
+          <h3>Line Input</h3>
+          <p>Paste multiple lines and convert each line in one click.</p>
+          <textarea id="batch-lines-input" rows="6" placeholder="HELLO&#10;NEED HELP&#10;GOOD LUCK"></textarea>
+          <div class="button-row">
+            <button type="button" id="batch-lines-run">Convert Lines</button>
+            <button type="button" id="batch-lines-clear" class="ghost">Clear</button>
+          </div>
+        </div>
+        <div class="mini-tool">
+          <h3>Batch Output</h3>
+          <p class="muted">Each line is converted separately.</p>
+          <pre id="batch-lines-output" class="mono-output"></pre>
+        </div>
+      </div>
     </section>
 
     <section class="panel reveal">
