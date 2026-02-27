@@ -1,0 +1,4 @@
+https://www.morsecodegenerators.org/* https://morsecodegenerators.org/:splat 301!
+
+# Keep URL format consistent.
+/index.html / 301

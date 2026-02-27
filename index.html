@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morse Code Generator & Translator | Text to Morse Tool</title>
+  <meta name="description" content="Convert text to Morse code and Morse to text instantly. Free online Morse code generator with alphabet reference, FAQs, and fast copy-ready output.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://morsecodegenerators.org/">
+  <meta name="theme-color" content="#0a0f2e">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Morse Code Generator & Translator">
+  <meta property="og:description" content="Text to Morse and Morse to text converter with alphabet table, usage guide, and practical FAQs.">
+  <meta property="og:url" content="https://morsecodegenerators.org/">
+  <meta property="og:image" content="/favicon.svg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Morse Code Generator & Translator">
+  <meta name="twitter:description" content="Fast and accurate Morse code converter for text and code translation.">
+  <meta name="twitter:image" content="/favicon.svg">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/styles.css" as="style">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Morse Code Generator",
+        "url": "https://morsecodegenerators.org/",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Morse Code Generator & Translator",
+        "url": "https://morsecodegenerators.org/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "description": "Convert text to Morse code and decode Morse to plain text instantly.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How are words separated in Morse output?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Letters are separated by a single space, and words are separated by a slash."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which characters are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool supports A-Z, 0-9, and common punctuation such as period, comma, question mark, exclamation mark, slash, hyphen, at sign, colon, semicolon, equals, plus, parentheses, apostrophe, quotation mark, ampersand, and underscore."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is SOS in Morse code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SOS is written as dot dot dot, dash dash dash, dot dot dot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the converter case-sensitive?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Text input is normalized to uppercase before conversion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are some symbols skipped during decoding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unsupported characters or invalid Morse chunks are ignored to keep conversion fast, and the skipped count is shown."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#converter">Skip to converter</a>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <p class="brand">Morse Code Generator</p>
+      <nav aria-label="Section navigation">
+        <a href="#converter">Converter</a>
+        <a href="#how-to">How To Use</a>
+        <a href="#alphabet">Alphabet</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#faq">FAQ</a>
+        <a href="#seo-guide">Guide</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero reveal">
+      <p class="eyebrow">Fast, free, and accurate</p>
+      <h1>Morse Code Translator and Generator for Instant Conversion</h1>
+      <p>
+        This online morse code translator helps you convert text to Morse code and morse code to text in real time.
+        Use it for learning, puzzle solving, and quick communication drills.
+      </p>
+    </section>
+
+    <section id="converter" class="panel reveal">
+      <h2>Text and Morse Converter</h2>
+      <p class="panel-lead">Type in either box. The last edited input controls conversion direction automatically.</p>
+
+      <div class="grid-two">
+        <div class="field-card" id="text-card">
+          <div class="field-head">
+            <label for="text-input">Plain Text</label>
+            <span class="source-badge" id="text-source-badge" aria-live="polite">Source</span>
+          </div>
+          <textarea id="text-input" rows="8" placeholder="Example: SOS NEED HELP AT DOCK 7"></textarea>
+        </div>
+
+        <div class="field-card" id="morse-card">
+          <div class="field-head">
+            <label for="morse-input">Morse Code</label>
+            <span class="source-badge" id="morse-source-badge" aria-live="polite">Output</span>
+          </div>
+          <textarea id="morse-input" rows="8" placeholder="... --- ... / -. . . -.. / .... . .-.. .--."></textarea>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button type="button" id="copy-output">Copy Output</button>
+        <button type="button" id="swap-direction" class="ghost">Swap Direction</button>
+        <button type="button" id="clear-all" class="ghost">Clear All</button>
+      </div>
+
+      <p id="converter-status" class="status" aria-live="polite">Ready.</p>
+      <p id="converter-warning" class="warning" aria-live="polite"></p>
+    </section>
+
+    <section id="how-to" class="panel reveal">
+      <h2>How To Use This Tool</h2>
+      <ol>
+        <li>To convert text to Morse, type your message in the plain text box.</li>
+        <li>To convert morse to text, paste code symbols in the Morse box using spaces between letters and slash between words.</li>
+        <li>Use Copy Output to reuse results quickly in notes, chats, or exercises.</li>
+      </ol>
+    </section>
+
+    <section id="alphabet" class="panel reveal">
+      <h2>Morse Code Alphabet Quick Table</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>Letters and numbers</caption>
+          <thead>
+            <tr>
+              <th>Char</th>
+              <th>Code</th>
+              <th>Char</th>
+              <th>Code</th>
+              <th>Char</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>A</td><td>.-</td><td>J</td><td>.---</td><td>S</td><td>...</td></tr>
+            <tr><td>B</td><td>-...</td><td>K</td><td>-.-</td><td>T</td><td>-</td></tr>
+            <tr><td>C</td><td>-.-.</td><td>L</td><td>.-..</td><td>U</td><td>..-</td></tr>
+            <tr><td>D</td><td>-..</td><td>M</td><td>--</td><td>V</td><td>...-</td></tr>
+            <tr><td>E</td><td>.</td><td>N</td><td>-.</td><td>W</td><td>.--</td></tr>
+            <tr><td>F</td><td>..-.</td><td>O</td><td>---</td><td>X</td><td>-..-</td></tr>
+            <tr><td>G</td><td>--.</td><td>P</td><td>.--.</td><td>Y</td><td>-.--</td></tr>
+            <tr><td>H</td><td>....</td><td>Q</td><td>--.-</td><td>Z</td><td>--..</td></tr>
+            <tr><td>I</td><td>..</td><td>R</td><td>.-.</td><td>0</td><td>-----</td></tr>
+            <tr><td>1</td><td>.----</td><td>2</td><td>..---</td><td>3</td><td>...--</td></tr>
+            <tr><td>4</td><td>....-</td><td>5</td><td>.....</td><td>6</td><td>-....</td></tr>
+            <tr><td>7</td><td>--...</td><td>8</td><td>---..</td><td>9</td><td>----.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>Supported punctuation</caption>
+          <thead>
+            <tr>
+              <th>Char</th>
+              <th>Code</th>
+              <th>Char</th>
+              <th>Code</th>
+              <th>Char</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>.</td><td>.-.-.-</td><td>,</td><td>--..--</td><td>?</td><td>..--..</td></tr>
+            <tr><td>!</td><td>-.-.--</td><td>/</td><td>-..-.</td><td>-</td><td>-....-</td></tr>
+            <tr><td>@</td><td>.--.-.</td><td>:</td><td>---...</td><td>;</td><td>-.-.-.</td></tr>
+            <tr><td>=</td><td>-...-</td><td>+</td><td>.-.-.</td><td>(</td><td>-.--.</td></tr>
+            <tr><td>)</td><td>-.--.-</td><td>'</td><td>.----.</td><td>"</td><td>.-..-.</td></tr>
+            <tr><td>&amp;</td><td>.-...</td><td>_</td><td>..--.-</td><td>&nbsp;</td><td>/</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="use-cases" class="panel reveal">
+      <h2>Use Cases</h2>
+      <div class="cards">
+        <article>
+          <h3>Learning Morse Basics</h3>
+          <p>Practice letter patterns quickly with instant feedback while studying the international Morse alphabet.</p>
+        </article>
+        <article>
+          <h3>Puzzles and Escape Games</h3>
+          <p>Decode hidden clues from puzzle rooms, CTF tasks, and game riddles without context switching.</p>
+        </article>
+        <article>
+          <h3>Emergency Signal Practice</h3>
+          <p>Review classic sequences like SOS and test message readability for low-bandwidth signaling scenarios.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="panel reveal">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>How are letters and words separated in Morse output?</summary>
+        <p>Letters use a single space, and words use a slash <code>/</code> separator.</p>
+      </details>
+      <details>
+        <summary>What characters does this converter support?</summary>
+        <p>The tool supports A-Z, 0-9, and common punctuation: <code>. , ? ! / - @ : ; = + ( ) ' " &amp; _</code>.</p>
+      </details>
+      <details>
+        <summary>How do I write SOS in Morse code?</summary>
+        <p>SOS is <code>... --- ...</code>.</p>
+      </details>
+      <details>
+        <summary>Is this tool case-sensitive?</summary>
+        <p>No. Text input is normalized to uppercase before conversion.</p>
+      </details>
+      <details>
+        <summary>Why does decoding skip some symbols?</summary>
+        <p>Unsupported characters and invalid Morse chunks are skipped by design, and the skipped count is shown below the converter.</p>
+      </details>
+      <details>
+        <summary>Can I use slash and line breaks together?</summary>
+        <p>Yes. New lines are treated as word boundaries, same as slash separators.</p>
+      </details>
+    </section>
+
+    <section id="seo-guide" class="panel reveal">
+      <h2>Advanced Morse Learning and Query Guide</h2>
+      <p>
+        If you need a reliable <strong>morse code generator</strong>, this page is designed to act as a practical
+        <strong>morse code generator</strong> for daily conversion tasks. Many learners start with a
+        <strong>morse code generator</strong> to check spacing, then reuse the same <strong>morse code generator</strong>
+        for drills, puzzles, and practice messages. For fast output and clean syntax, this
+        <strong>morse code generator</strong> doubles as a translator, and a <strong>morse code generator</strong>
+        for both plain text and code decoding.
+      </p>
+      <p>
+        Search intent also varies by wording. Some users want a quick <strong>morse code converter</strong>, others ask for
+        <strong>morse code generator text</strong> workflows or a <strong>text to morse code converter</strong>.
+        You may also see <strong>text to morse code translator</strong>, <strong>morse code text generator</strong>,
+        <strong>text to morse code generator</strong>, and queries like <strong>turn words into morse code</strong>.
+      </p>
+      <p>
+        Related intent phrases include <strong>morse code gen</strong>, <strong>letters to morse code</strong>,
+        <strong>morse code text</strong>, <strong>text into morse code</strong>, <strong>turn text into morse code</strong>,
+        <strong>english to morse code translator</strong>, <strong>convert words to morse code</strong>,
+        <strong>in morse code</strong>, <strong>words in morse code</strong>, <strong>morse code writer</strong>,
+        <strong>morse code calculator</strong>, <strong>morse code creator</strong>, <strong>convert text to morse code</strong>,
+        <strong>text to morse</strong>, <strong>text to morse code convertor</strong>,
+        <strong>morse code translator online</strong>, <strong>morse code number translator</strong>,
+        <strong>...---... morse code</strong>, <strong>number morse code translator</strong>,
+        <strong>english to morse</strong>, <strong>translate morse code to english</strong>,
+        <strong>morse translate</strong>, <strong>morse code trans</strong>, <strong>words to morse code</strong>,
+        <strong>translate morse code</strong>, <strong>morse code to text</strong>,
+        <strong>morse code translator to text</strong>, <strong>how to write in morse code</strong>,
+        <strong>morse code maker</strong>, <strong>morse code typer</strong>, <strong>number morse code</strong>,
+        <strong>...</strong>, <strong>morse code convertor</strong>, <strong>morse code encoder</strong>,
+        <strong>convert to morse code</strong>, <strong>text to morse code</strong>,
+        <strong>english to morse code</strong>, <strong>translate into morse code</strong>,
+        <strong>morse code translate</strong>, <strong>translate to morse code</strong>,
+        <strong>decode morse code</strong>, and <strong>morse code to english</strong>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>Privacy note: This page runs fully in your browser and does not store your converter text on a server.</p>
+      <p>Version: v1.0.0</p>
+    </div>
+  </footer>
+</body>
+</html>
