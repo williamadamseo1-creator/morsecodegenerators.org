@@ -383,7 +383,7 @@ function Get-DeepDive($page) {
     "media" {
       return @(
         "Media intent queries usually come from audio or image decoding tasks. This page explains practical workflows for converting non-text clues into valid Morse input.",
-        "When the source is noisy or blurry, decode in small chunks first. Short chunk validation reduces error rate and speeds up final message reconstruction."
+        "When the source is noisy or blurry, decode in small chunks first. Short chunk validation reduces error rate and speeds up <a href=""https://bestseoagencyforrealestateagents.com/"">final message reconstruction</a>."
       )
     }
     default {
