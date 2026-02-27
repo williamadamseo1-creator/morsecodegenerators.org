@@ -17,15 +17,57 @@
   <meta name="twitter:description" content="Use this morse code translator online to convert text to Morse code and decode Morse to text quickly with practical examples and FAQs.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Morse Code Translator Online for Fast Two-Way Conversion",
-    "url": "https://morsecodegenerators.org/morse-code-translator/",
-    "description": "Use this morse code translator online to convert text to Morse code and decode Morse to text quickly with practical examples and FAQs.",
-    "mainEntityOfPage": "https://morsecodegenerators.org/morse-code-translator/"
-  }
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "WebPage",
+                       "name":  "Morse Code Translator Online for Fast Two-Way Conversion",
+                       "url":  "https://morsecodegenerators.org/morse-code-translator/",
+                       "description":  "Use this morse code translator online to convert text to Morse code and decode Morse to text quickly with practical examples and FAQs.",
+                       "mainEntityOfPage":  "https://morsecodegenerators.org/morse-code-translator/"
+                   },
+                   {
+                       "@type":  "FAQPage",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is this a free morse code translator online?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. The translator runs in your browser at no cost."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can I translate morse code to English and back?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Type in either box and the direction updates automatically."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What separator format should I use?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Use one space for letters and slash for words."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "I searched morse code translater or convertor. Is this the same tool?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Those are common misspellings of translator intent."
+                                                                 }
+                                          }
+                                      ]
+                   }
+               ]
+}
   </script>
 </head>
 <body>
@@ -49,19 +91,55 @@
       <p>Use this guide with the live tool to translate Morse code to English and convert plain text into Morse code in seconds.</p>
     </section>
 
+    <section id="converter" class="panel reveal">
+      <h2>Live Morse Converter</h2>
+      <p class="panel-lead">Type in either box. The last edited input controls conversion direction automatically.</p>
+      <div class="grid-two">
+        <div class="field-card" id="text-card">
+          <div class="field-head">
+            <label for="text-input">Plain Text</label>
+            <span class="source-badge" id="text-source-badge" aria-live="polite">Source</span>
+          </div>
+          <textarea id="text-input" rows="8" placeholder="Example: SOS NEED HELP AT DOCK 7"></textarea>
+        </div>
+        <div class="field-card" id="morse-card">
+          <div class="field-head">
+            <label for="morse-input">Morse Code</label>
+            <span class="source-badge" id="morse-source-badge" aria-live="polite">Output</span>
+          </div>
+          <textarea id="morse-input" rows="8" placeholder="... --- ... / -. . . -.. / .... . .-.. .--."></textarea>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" id="copy-output">Copy Output</button>
+        <button type="button" id="swap-direction" class="ghost">Swap Direction</button>
+        <button type="button" id="clear-all" class="ghost">Clear All</button>
+      </div>
+      <p id="converter-status" class="status" aria-live="polite">Ready.</p>
+      <p id="converter-warning" class="warning" aria-live="polite"></p>
+    </section>
+
     <section class="panel reveal">
-      <h2>Use the Live Converter</h2>
-      <p class="muted">Need instant conversion? Open the main tool and convert in both directions.</p>
-      <a class="button-link" href="/#converter">Open Live Morse Converter</a>
-      <p class="muted">Primary keyword: <strong>morse code translator</strong> | Intent: translator | Priority: P1</p>
+      <h2>Detailed Explanation</h2>
+      <p>A good translator page should solve both conversion directions in one place. This page includes a live converter so users can convert text to Morse code, then decode back immediately for accuracy checks.</p>
+      <p>For best results, keep spacing consistent and avoid unsupported symbols. If a symbol is skipped, the warning message shows exactly how many items were ignored.</p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Who This Page Helps</h2>
+      <ul class="example-list">
+        <li>Fast two-way conversion for messages</li>
+        <li>Classroom and self-study text checks</li>
+        <li>Puzzle and CTF decoding tasks</li>
+      </ul>
     </section>
 
     <section class="panel reveal">
       <h2>How to Use This Page</h2>
       <ol>
-        <li>Enter your phrase in the converter on the homepage.</li>
-        <li>Use a single space between Morse letters and slash between words.</li>
-        <li>Copy output and verify with the reverse direction to avoid mistakes.</li>
+        <li>Enter your phrase in the converter below.</li>
+        <li>Use one space between Morse letters and slash between words.</li>
+        <li>Copy output and reverse-convert once to validate accuracy.</li>
       </ol>
     </section>
 
@@ -78,6 +156,15 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Practice Prompts</h2>
+      <ul class="example-list">
+        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
+        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
+        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+      </ul>
+    </section>
+
+    <section class="panel reveal">
       <h2>Common Mistakes to Avoid</h2>
       <ul class="example-list">
         <li>Mixing letter spaces with word separators.</li>
@@ -90,11 +177,11 @@
       <h2>Frequently Asked Questions</h2>
       <details>
         <summary>Is this a free morse code translator online?</summary>
-        <p>Yes. The translator is free and works directly in your browser.</p>
+        <p>Yes. The translator runs in your browser at no cost.</p>
       </details>
       <details>
         <summary>Can I translate morse code to English and back?</summary>
-        <p>Yes. Type in either box and the tool auto-detects direction.</p>
+        <p>Yes. Type in either box and the direction updates automatically.</p>
       </details>
       <details>
         <summary>What separator format should I use?</summary>
@@ -102,7 +189,7 @@
       </details>
       <details>
         <summary>I searched morse code translater or convertor. Is this the same tool?</summary>
-        <p>Yes. Common misspellings like translater and convertor refer to the same translator intent.</p>
+        <p>Yes. Those are common misspellings of translator intent.</p>
       </details>
     </section>
 
@@ -140,8 +227,8 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>Privacy note: This guide is informational. Use the homepage tool for live conversion and output copying.</p>
-      <p>Version: v1.1.0</p>
+      <p>Privacy note: This guide is informational. Converter input stays in your browser session.</p>
+      <p>Version: v1.2.0</p>
     </div>
   </footer>
 </body>

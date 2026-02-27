@@ -17,15 +17,57 @@
   <meta name="twitter:description" content="Use this Morse code chart to quickly reference letters, numbers, and punctuation. Great for beginners and classroom practice.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Morse Code Chart for Quick Lookup and Practice",
-    "url": "https://morsecodegenerators.org/morse-code-chart/",
-    "description": "Use this Morse code chart to quickly reference letters, numbers, and punctuation. Great for beginners and classroom practice.",
-    "mainEntityOfPage": "https://morsecodegenerators.org/morse-code-chart/"
-  }
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "WebPage",
+                       "name":  "Morse Code Chart for Quick Lookup and Practice",
+                       "url":  "https://morsecodegenerators.org/morse-code-chart/",
+                       "description":  "Use this Morse code chart to quickly reference letters, numbers, and punctuation. Great for beginners and classroom practice.",
+                       "mainEntityOfPage":  "https://morsecodegenerators.org/morse-code-chart/"
+                   },
+                   {
+                       "@type":  "FAQPage",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is this chart useful for beginners?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. It is optimized for quick lookup while learning."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can I print this page?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. The sections are print-friendly for study sheets."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Does the chart include numbers?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Number patterns are covered in examples and related pages."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What is a good chart practice method?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Encode ten words, decode ten words, and compare results daily."
+                                                                 }
+                                          }
+                                      ]
+                   }
+               ]
+}
   </script>
 </head>
 <body>
@@ -46,22 +88,58 @@
     <section class="hero page-hero reveal">
       <p class="eyebrow">morse code chart guide</p>
       <h1>Morse Code Chart for Quick Lookup and Practice</h1>
-      <p>Use this chart-style guide when you need a fast lookup for symbols during practice, puzzles, or study sessions.</p>
+      <p>Use this chart-style guide when you need fast symbol lookup during study, games, or puzzle solving.</p>
+    </section>
+
+    <section id="converter" class="panel reveal">
+      <h2>Live Morse Converter</h2>
+      <p class="panel-lead">Type in either box. The last edited input controls conversion direction automatically.</p>
+      <div class="grid-two">
+        <div class="field-card" id="text-card">
+          <div class="field-head">
+            <label for="text-input">Plain Text</label>
+            <span class="source-badge" id="text-source-badge" aria-live="polite">Source</span>
+          </div>
+          <textarea id="text-input" rows="8" placeholder="Example: SOS NEED HELP AT DOCK 7"></textarea>
+        </div>
+        <div class="field-card" id="morse-card">
+          <div class="field-head">
+            <label for="morse-input">Morse Code</label>
+            <span class="source-badge" id="morse-source-badge" aria-live="polite">Output</span>
+          </div>
+          <textarea id="morse-input" rows="8" placeholder="... --- ... / -. . . -.. / .... . .-.. .--."></textarea>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" id="copy-output">Copy Output</button>
+        <button type="button" id="swap-direction" class="ghost">Swap Direction</button>
+        <button type="button" id="clear-all" class="ghost">Clear All</button>
+      </div>
+      <p id="converter-status" class="status" aria-live="polite">Ready.</p>
+      <p id="converter-warning" class="warning" aria-live="polite"></p>
     </section>
 
     <section class="panel reveal">
-      <h2>Use the Live Converter</h2>
-      <p class="muted">Need instant conversion? Open the main tool and convert in both directions.</p>
-      <a class="button-link" href="/#converter">Open Live Morse Converter</a>
-      <p class="muted">Primary keyword: <strong>morse code chart</strong> | Intent: reference | Priority: P1</p>
+      <h2>Detailed Explanation</h2>
+      <p>Reference pages are designed for fast lookup. Use this guide when you need exact symbols for letters, numbers, or chart-style memorization during study sessions.</p>
+      <p>Pair this page with the converter to move from static reference to active practice. Active encode/decode drills improve recall much faster than passive reading.</p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Who This Page Helps</h2>
+      <ul class="example-list">
+        <li>Quick letter and symbol lookup</li>
+        <li>Worksheet and chart-based learning</li>
+        <li>Error-checking during manual encoding</li>
+      </ul>
     </section>
 
     <section class="panel reveal">
       <h2>How to Use This Page</h2>
       <ol>
-        <li>Scan letters left to right and match by pattern length.</li>
-        <li>Break long words into small chunks.</li>
-        <li>Verify final output in the converter.</li>
+        <li>Scan symbols by pattern length to improve recognition speed.</li>
+        <li>Break long words into smaller chunks.</li>
+        <li>Validate output in the converter below.</li>
       </ol>
     </section>
 
@@ -77,11 +155,20 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Practice Prompts</h2>
+      <ul class="example-list">
+        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
+        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
+        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+      </ul>
+    </section>
+
+    <section class="panel reveal">
       <h2>Common Mistakes to Avoid</h2>
       <ul class="example-list">
-        <li>Reading chart rows too fast without checking separators.</li>
-        <li>Confusing similar patterns like B and 6.</li>
-        <li>Using inconsistent word spacing.</li>
+        <li>Reading too fast without checking separators.</li>
+        <li>Confusing visually similar patterns like B and 6.</li>
+        <li>Using inconsistent spacing.</li>
       </ul>
     </section>
 
@@ -89,19 +176,19 @@
       <h2>Frequently Asked Questions</h2>
       <details>
         <summary>Is this chart useful for beginners?</summary>
-        <p>Yes. It is designed for fast visual lookup while learning.</p>
+        <p>Yes. It is optimized for quick lookup while learning.</p>
       </details>
       <details>
         <summary>Can I print this page?</summary>
-        <p>Yes. The content is structured for easy printing and reference.</p>
+        <p>Yes. The sections are print-friendly for study sheets.</p>
       </details>
       <details>
         <summary>Does the chart include numbers?</summary>
-        <p>Yes. Number patterns are included with letter guidance.</p>
+        <p>Yes. Number patterns are covered in examples and related pages.</p>
       </details>
       <details>
-        <summary>What is the best way to practice with a chart?</summary>
-        <p>Pick ten words daily, encode them, then decode them back.</p>
+        <summary>What is a good chart practice method?</summary>
+        <p>Encode ten words, decode ten words, and compare results daily.</p>
       </details>
     </section>
 
@@ -139,8 +226,8 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>Privacy note: This guide is informational. Use the homepage tool for live conversion and output copying.</p>
-      <p>Version: v1.1.0</p>
+      <p>Privacy note: This guide is informational. Converter input stays in your browser session.</p>
+      <p>Version: v1.2.0</p>
     </div>
   </footer>
 </body>

@@ -17,15 +17,57 @@
   <meta name="twitter:description" content="See how to write I love you in Morse code and practice variations like hi and hello with clean spacing rules.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "How to Write I Love You in Morse Code",
-    "url": "https://morsecodegenerators.org/i-love-you-in-morse-code/",
-    "description": "See how to write I love you in Morse code and practice variations like hi and hello with clean spacing rules.",
-    "mainEntityOfPage": "https://morsecodegenerators.org/i-love-you-in-morse-code/"
-  }
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "WebPage",
+                       "name":  "How to Write I Love You in Morse Code",
+                       "url":  "https://morsecodegenerators.org/i-love-you-in-morse-code/",
+                       "description":  "See how to write I love you in Morse code and practice variations like hi and hello with clean spacing rules.",
+                       "mainEntityOfPage":  "https://morsecodegenerators.org/i-love-you-in-morse-code/"
+                   },
+                   {
+                       "@type":  "FAQPage",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What is I LOVE YOU in Morse code?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  ".. / .-.. --- ...- . / -.-- --- ..-"
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can I encode romantic phrases safely?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Keep spacing clean and verify by decoding back."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Does case matter for phrase conversion?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "No. Text is normalized to uppercase automatically."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can I use this page for hello and hi too?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Common phrase examples are included for quick practice."
+                                                                 }
+                                          }
+                                      ]
+                   }
+               ]
+}
   </script>
 </head>
 <body>
@@ -46,22 +88,58 @@
     <section class="hero page-hero reveal">
       <p class="eyebrow">i love you in morse code guide</p>
       <h1>How to Write I Love You in Morse Code</h1>
-      <p>This phrase guide helps you encode and decode I love you in Morse code with correct letter and word spacing.</p>
+      <p>This phrase guide helps you encode and decode I love you in Morse code with proper spacing.</p>
+    </section>
+
+    <section id="converter" class="panel reveal">
+      <h2>Live Morse Converter</h2>
+      <p class="panel-lead">Type in either box. The last edited input controls conversion direction automatically.</p>
+      <div class="grid-two">
+        <div class="field-card" id="text-card">
+          <div class="field-head">
+            <label for="text-input">Plain Text</label>
+            <span class="source-badge" id="text-source-badge" aria-live="polite">Source</span>
+          </div>
+          <textarea id="text-input" rows="8" placeholder="Example: SOS NEED HELP AT DOCK 7"></textarea>
+        </div>
+        <div class="field-card" id="morse-card">
+          <div class="field-head">
+            <label for="morse-input">Morse Code</label>
+            <span class="source-badge" id="morse-source-badge" aria-live="polite">Output</span>
+          </div>
+          <textarea id="morse-input" rows="8" placeholder="... --- ... / -. . . -.. / .... . .-.. .--."></textarea>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" id="copy-output">Copy Output</button>
+        <button type="button" id="swap-direction" class="ghost">Swap Direction</button>
+        <button type="button" id="clear-all" class="ghost">Clear All</button>
+      </div>
+      <p id="converter-status" class="status" aria-live="polite">Ready.</p>
+      <p id="converter-warning" class="warning" aria-live="polite"></p>
     </section>
 
     <section class="panel reveal">
-      <h2>Use the Live Converter</h2>
-      <p class="muted">Need instant conversion? Open the main tool and convert in both directions.</p>
-      <a class="button-link" href="/#converter">Open Live Morse Converter</a>
-      <p class="muted">Primary keyword: <strong>i love you in morse code</strong> | Intent: phrase | Priority: P1</p>
+      <h2>Detailed Explanation</h2>
+      <p>Phrase-focused pages help users solve common real searches quickly. You get exact sequence examples plus spacing rules so your output remains readable.</p>
+      <p>After copying a phrase result, always run reverse conversion once. This catches spacing mistakes before you share the final Morse message.</p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Who This Page Helps</h2>
+      <ul class="example-list">
+        <li>Emergency phrase validation</li>
+        <li>Personal phrase conversion practice</li>
+        <li>Communication drills with known sentences</li>
+      </ul>
     </section>
 
     <section class="panel reveal">
       <h2>How to Use This Page</h2>
       <ol>
-        <li>Split the sentence by words first.</li>
+        <li>Split your phrase into words first.</li>
         <li>Encode each letter with single spaces.</li>
-        <li>Use slash between words and verify output with reverse decoding.</li>
+        <li>Use slash between words and reverse-check output.</li>
       </ol>
     </section>
 
@@ -77,11 +155,20 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Practice Prompts</h2>
+      <ul class="example-list">
+        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
+        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
+        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+      </ul>
+    </section>
+
+    <section class="panel reveal">
       <h2>Common Mistakes to Avoid</h2>
       <ul class="example-list">
-        <li>Forgetting slash separators between words.</li>
+        <li>Missing slash separators between words.</li>
         <li>Dropping dots in longer words like LOVE.</li>
-        <li>Using mixed spacing that breaks decoding.</li>
+        <li>Using inconsistent spacing.</li>
       </ul>
     </section>
 
@@ -93,15 +180,15 @@
       </details>
       <details>
         <summary>Can I encode romantic phrases safely?</summary>
-        <p>Yes. Use clear spacing and recheck by decoding back.</p>
+        <p>Yes. Keep spacing clean and verify by decoding back.</p>
       </details>
       <details>
         <summary>Does case matter for phrase conversion?</summary>
-        <p>No. Text input is normalized to uppercase.</p>
+        <p>No. Text is normalized to uppercase automatically.</p>
       </details>
       <details>
         <summary>Can I use this page for hello and hi too?</summary>
-        <p>Yes. This page includes common phrase examples and links to the converter.</p>
+        <p>Yes. Common phrase examples are included for quick practice.</p>
       </details>
     </section>
 
@@ -139,8 +226,8 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>Privacy note: This guide is informational. Use the homepage tool for live conversion and output copying.</p>
-      <p>Version: v1.1.0</p>
+      <p>Privacy note: This guide is informational. Converter input stays in your browser session.</p>
+      <p>Version: v1.2.0</p>
     </div>
   </footer>
 </body>

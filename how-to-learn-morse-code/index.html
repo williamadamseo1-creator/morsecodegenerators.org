@@ -17,15 +17,57 @@
   <meta name="twitter:description" content="Follow this practical plan to learn Morse code with daily drills, memory strategy, and conversion exercises.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "How to Learn Morse Code with a Practical Daily Plan",
-    "url": "https://morsecodegenerators.org/how-to-learn-morse-code/",
-    "description": "Follow this practical plan to learn Morse code with daily drills, memory strategy, and conversion exercises.",
-    "mainEntityOfPage": "https://morsecodegenerators.org/how-to-learn-morse-code/"
-  }
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "WebPage",
+                       "name":  "How to Learn Morse Code with a Practical Daily Plan",
+                       "url":  "https://morsecodegenerators.org/how-to-learn-morse-code/",
+                       "description":  "Follow this practical plan to learn Morse code with daily drills, memory strategy, and conversion exercises.",
+                       "mainEntityOfPage":  "https://morsecodegenerators.org/how-to-learn-morse-code/"
+                   },
+                   {
+                       "@type":  "FAQPage",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What is the best beginner schedule?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Two short sessions per day work better than one long session."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Should I learn numbers early?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Add numbers after you are comfortable with common letters."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "How can I track progress?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Track mastered symbols, decoding speed, and weekly accuracy."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can this site work as a daily trainer?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Use these guides and the built-in converter together."
+                                                                 }
+                                          }
+                                      ]
+                   }
+               ]
+}
   </script>
 </head>
 <body>
@@ -46,41 +88,86 @@
     <section class="hero page-hero reveal">
       <p class="eyebrow">how to learn morse code guide</p>
       <h1>How to Learn Morse Code with a Practical Daily Plan</h1>
-      <p>Use this beginner training framework to build consistency, improve recall, and move from letters to full sentences.</p>
+      <p>Use this training framework to build consistency and move from letters to full phrase decoding.</p>
+    </section>
+
+    <section id="converter" class="panel reveal">
+      <h2>Live Morse Converter</h2>
+      <p class="panel-lead">Type in either box. The last edited input controls conversion direction automatically.</p>
+      <div class="grid-two">
+        <div class="field-card" id="text-card">
+          <div class="field-head">
+            <label for="text-input">Plain Text</label>
+            <span class="source-badge" id="text-source-badge" aria-live="polite">Source</span>
+          </div>
+          <textarea id="text-input" rows="8" placeholder="Example: SOS NEED HELP AT DOCK 7"></textarea>
+        </div>
+        <div class="field-card" id="morse-card">
+          <div class="field-head">
+            <label for="morse-input">Morse Code</label>
+            <span class="source-badge" id="morse-source-badge" aria-live="polite">Output</span>
+          </div>
+          <textarea id="morse-input" rows="8" placeholder="... --- ... / -. . . -.. / .... . .-.. .--."></textarea>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" id="copy-output">Copy Output</button>
+        <button type="button" id="swap-direction" class="ghost">Swap Direction</button>
+        <button type="button" id="clear-all" class="ghost">Clear All</button>
+      </div>
+      <p id="converter-status" class="status" aria-live="polite">Ready.</p>
+      <p id="converter-warning" class="warning" aria-live="polite"></p>
     </section>
 
     <section class="panel reveal">
-      <h2>Use the Live Converter</h2>
-      <p class="muted">Need instant conversion? Open the main tool and convert in both directions.</p>
-      <a class="button-link" href="/#converter">Open Live Morse Converter</a>
-      <p class="muted">Primary keyword: <strong>how to learn morse code</strong> | Intent: learning | Priority: P1</p>
+      <h2>Detailed Explanation</h2>
+      <p>Learning intent needs structure, not only symbol lists. This page combines method, examples, and practice prompts so beginners can build skill steadily.</p>
+      <p>Use short, repeatable sessions. Consistent daily practice with immediate feedback from the converter gives better retention than occasional long sessions.</p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Who This Page Helps</h2>
+      <ul class="example-list">
+        <li>Beginner study plans</li>
+        <li>Daily progressive practice</li>
+        <li>Skill-building for reading and writing Morse</li>
+      </ul>
     </section>
 
     <section class="panel reveal">
       <h2>How to Use This Page</h2>
       <ol>
-        <li>Week 1: Learn top 12 symbols and review twice daily.</li>
-        <li>Week 2: Add numbers and phrase practice.</li>
-        <li>Week 3+: Practice speed with timed conversion sessions.</li>
+        <li>Week 1: Learn 10-12 symbols and review daily.</li>
+        <li>Week 2: Add numbers and common phrases.</li>
+        <li>Week 3+: Increase speed with timed conversion practice.</li>
       </ol>
     </section>
 
     <section class="panel reveal">
       <h2>Examples</h2>
       <ul class="example-list">
-        <li>Day practice target: 10 words encode + decode</li>
-        <li>Week goal: Memorize A-Z core letters</li>
-        <li>Timing drill: 5 minutes dot and dash rhythm</li>
+        <li>Daily target: 10 words encode + decode</li>
+        <li>Week goal: memorize core A-Z letters</li>
+        <li>Timing drill: 5 minutes dot-dash rhythm</li>
         <li>Phrase drill: SOS, HELLO, NEED HELP</li>
+      </ul>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Practice Prompts</h2>
+      <ul class="example-list">
+        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
+        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
+        <li>Create a custom sentence, convert it, then decode back to validate.</li>
       </ul>
     </section>
 
     <section class="panel reveal">
       <h2>Common Mistakes to Avoid</h2>
       <ul class="example-list">
-        <li>Skipping reviews for several days.</li>
+        <li>Skipping practice for multiple days.</li>
         <li>Learning too many symbols in one session.</li>
-        <li>Ignoring decoding practice while only encoding.</li>
+        <li>Only encoding without decoding.</li>
       </ul>
     </section>
 
@@ -88,19 +175,19 @@
       <h2>Frequently Asked Questions</h2>
       <details>
         <summary>What is the best beginner schedule?</summary>
-        <p>Two short sessions per day work better than one long weekly session.</p>
+        <p>Two short sessions per day work better than one long session.</p>
       </details>
       <details>
         <summary>Should I learn numbers early?</summary>
-        <p>Add numbers after you become comfortable with common letters.</p>
+        <p>Add numbers after you are comfortable with common letters.</p>
       </details>
       <details>
         <summary>How can I track progress?</summary>
-        <p>Use a checklist of symbols mastered and weekly phrase speed.</p>
+        <p>Track mastered symbols, decoding speed, and weekly accuracy.</p>
       </details>
       <details>
-        <summary>Can this site be used as a daily trainer?</summary>
-        <p>Yes. Combine this plan with the live converter and examples on related pages.</p>
+        <summary>Can this site work as a daily trainer?</summary>
+        <p>Yes. Use these guides and the built-in converter together.</p>
       </details>
     </section>
 
@@ -138,8 +225,8 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>Privacy note: This guide is informational. Use the homepage tool for live conversion and output copying.</p>
-      <p>Version: v1.1.0</p>
+      <p>Privacy note: This guide is informational. Converter input stays in your browser session.</p>
+      <p>Version: v1.2.0</p>
     </div>
   </footer>
 </body>

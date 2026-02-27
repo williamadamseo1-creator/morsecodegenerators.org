@@ -17,15 +17,57 @@
   <meta name="twitter:description" content="Learn Morse code numbers 0-9 with examples and conversion tips. Translate number strings accurately using the live tool.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Morse Code Numbers: 0 to 9 with Easy Examples",
-    "url": "https://morsecodegenerators.org/morse-code-numbers/",
-    "description": "Learn Morse code numbers 0-9 with examples and conversion tips. Translate number strings accurately using the live tool.",
-    "mainEntityOfPage": "https://morsecodegenerators.org/morse-code-numbers/"
-  }
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "WebPage",
+                       "name":  "Morse Code Numbers: 0 to 9 with Easy Examples",
+                       "url":  "https://morsecodegenerators.org/morse-code-numbers/",
+                       "description":  "Learn Morse code numbers 0-9 with examples and conversion tips. Translate number strings accurately using the live tool.",
+                       "mainEntityOfPage":  "https://morsecodegenerators.org/morse-code-numbers/"
+                   },
+                   {
+                       "@type":  "FAQPage",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "How do I write a phone number in Morse code?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Convert each digit individually and keep spaces between symbols."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is 0 the longest dash-only code?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Zero is represented by five dashes."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can I mix numbers and words in one message?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes, with normal letter spacing and slash between words."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Which query usually matches this page?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Users often search number morse code translator or morse code numbers."
+                                                                 }
+                                          }
+                                      ]
+                   }
+               ]
+}
   </script>
 </head>
 <body>
@@ -46,22 +88,58 @@
     <section class="hero page-hero reveal">
       <p class="eyebrow">morse code numbers guide</p>
       <h1>Morse Code Numbers: 0 to 9 with Easy Examples</h1>
-      <p>This number-focused guide helps you translate digits correctly and avoid common number sequence mistakes in Morse.</p>
+      <p>This number-focused guide helps you translate digits correctly and avoid common sequence mistakes.</p>
+    </section>
+
+    <section id="converter" class="panel reveal">
+      <h2>Live Morse Converter</h2>
+      <p class="panel-lead">Type in either box. The last edited input controls conversion direction automatically.</p>
+      <div class="grid-two">
+        <div class="field-card" id="text-card">
+          <div class="field-head">
+            <label for="text-input">Plain Text</label>
+            <span class="source-badge" id="text-source-badge" aria-live="polite">Source</span>
+          </div>
+          <textarea id="text-input" rows="8" placeholder="Example: SOS NEED HELP AT DOCK 7"></textarea>
+        </div>
+        <div class="field-card" id="morse-card">
+          <div class="field-head">
+            <label for="morse-input">Morse Code</label>
+            <span class="source-badge" id="morse-source-badge" aria-live="polite">Output</span>
+          </div>
+          <textarea id="morse-input" rows="8" placeholder="... --- ... / -. . . -.. / .... . .-.. .--."></textarea>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" id="copy-output">Copy Output</button>
+        <button type="button" id="swap-direction" class="ghost">Swap Direction</button>
+        <button type="button" id="clear-all" class="ghost">Clear All</button>
+      </div>
+      <p id="converter-status" class="status" aria-live="polite">Ready.</p>
+      <p id="converter-warning" class="warning" aria-live="polite"></p>
     </section>
 
     <section class="panel reveal">
-      <h2>Use the Live Converter</h2>
-      <p class="muted">Need instant conversion? Open the main tool and convert in both directions.</p>
-      <a class="button-link" href="/#converter">Open Live Morse Converter</a>
-      <p class="muted">Primary keyword: <strong>morse code numbers</strong> | Intent: reference | Priority: P1</p>
+      <h2>Detailed Explanation</h2>
+      <p>Reference pages are designed for fast lookup. Use this guide when you need exact symbols for letters, numbers, or chart-style memorization during study sessions.</p>
+      <p>Pair this page with the converter to move from static reference to active practice. Active encode/decode drills improve recall much faster than passive reading.</p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Who This Page Helps</h2>
+      <ul class="example-list">
+        <li>Quick letter and symbol lookup</li>
+        <li>Worksheet and chart-based learning</li>
+        <li>Error-checking during manual encoding</li>
+      </ul>
     </section>
 
     <section class="panel reveal">
       <h2>How to Use This Page</h2>
       <ol>
-        <li>Memorize number patterns from 1 to 5 first.</li>
+        <li>Memorize 1-5 patterns first.</li>
         <li>Practice reverse patterns from 6 to 0.</li>
-        <li>Use grouped number examples in the converter.</li>
+        <li>Translate grouped numbers in the converter below.</li>
       </ol>
     </section>
 
@@ -82,11 +160,20 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Practice Prompts</h2>
+      <ul class="example-list">
+        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
+        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
+        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+      </ul>
+    </section>
+
+    <section class="panel reveal">
       <h2>Common Mistakes to Avoid</h2>
       <ul class="example-list">
         <li>Swapping 6 and B because both start with dash.</li>
-        <li>Dropping one dot in long number patterns.</li>
-        <li>Not separating numbers from words clearly.</li>
+        <li>Dropping one dot in longer number patterns.</li>
+        <li>Mixing number and word spacing.</li>
       </ul>
     </section>
 
@@ -94,19 +181,19 @@
       <h2>Frequently Asked Questions</h2>
       <details>
         <summary>How do I write a phone number in Morse code?</summary>
-        <p>Convert each digit separately and keep spaces between each number symbol.</p>
+        <p>Convert each digit individually and keep spaces between symbols.</p>
       </details>
       <details>
         <summary>Is 0 the longest dash-only code?</summary>
-        <p>Yes. Zero uses five dashes in international Morse.</p>
+        <p>Yes. Zero is represented by five dashes.</p>
       </details>
       <details>
         <summary>Can I mix numbers and words in one message?</summary>
-        <p>Yes. Use normal letter spacing and slash between words.</p>
+        <p>Yes, with normal letter spacing and slash between words.</p>
       </details>
       <details>
-        <summary>Which query matches this page intent?</summary>
-        <p>Users often search number morse code translator or morse code number guide.</p>
+        <summary>Which query usually matches this page?</summary>
+        <p>Users often search number morse code translator or morse code numbers.</p>
       </details>
     </section>
 
@@ -144,8 +231,8 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>Privacy note: This guide is informational. Use the homepage tool for live conversion and output copying.</p>
-      <p>Version: v1.1.0</p>
+      <p>Privacy note: This guide is informational. Converter input stays in your browser session.</p>
+      <p>Version: v1.2.0</p>
     </div>
   </footer>
 </body>

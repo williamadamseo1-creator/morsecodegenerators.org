@@ -17,15 +17,57 @@
   <meta name="twitter:description" content="Learn how to read Morse code with step-by-step rhythm training, pattern recognition, and decoding practice examples.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "How to Read Morse Code: A Beginner Method That Works",
-    "url": "https://morsecodegenerators.org/how-to-read-morse-code/",
-    "description": "Learn how to read Morse code with step-by-step rhythm training, pattern recognition, and decoding practice examples.",
-    "mainEntityOfPage": "https://morsecodegenerators.org/how-to-read-morse-code/"
-  }
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "WebPage",
+                       "name":  "How to Read Morse Code: A Beginner Method That Works",
+                       "url":  "https://morsecodegenerators.org/how-to-read-morse-code/",
+                       "description":  "Learn how to read Morse code with step-by-step rhythm training, pattern recognition, and decoding practice examples.",
+                       "mainEntityOfPage":  "https://morsecodegenerators.org/how-to-read-morse-code/"
+                   },
+                   {
+                       "@type":  "FAQPage",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "How long does it take to read Morse code?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Many beginners gain basic reading ability in 2-4 weeks with daily practice."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Should I decode by sound or symbols?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Start with symbols, then add sound drills for speed."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What is the fastest way to improve?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Use short daily sessions and repeat common patterns frequently."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can the converter help reading practice?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Decode small chunks and compare expected text instantly."
+                                                                 }
+                                          }
+                                      ]
+                   }
+               ]
+}
   </script>
 </head>
 <body>
@@ -46,14 +88,50 @@
     <section class="hero page-hero reveal">
       <p class="eyebrow">how to read morse code guide</p>
       <h1>How to Read Morse Code: A Beginner Method That Works</h1>
-      <p>Reading Morse becomes easier when you train rhythm first, then patterns, then real words. Use this process daily.</p>
+      <p>Reading Morse becomes easier when you train rhythm first, then pattern recognition, then words.</p>
+    </section>
+
+    <section id="converter" class="panel reveal">
+      <h2>Live Morse Converter</h2>
+      <p class="panel-lead">Type in either box. The last edited input controls conversion direction automatically.</p>
+      <div class="grid-two">
+        <div class="field-card" id="text-card">
+          <div class="field-head">
+            <label for="text-input">Plain Text</label>
+            <span class="source-badge" id="text-source-badge" aria-live="polite">Source</span>
+          </div>
+          <textarea id="text-input" rows="8" placeholder="Example: SOS NEED HELP AT DOCK 7"></textarea>
+        </div>
+        <div class="field-card" id="morse-card">
+          <div class="field-head">
+            <label for="morse-input">Morse Code</label>
+            <span class="source-badge" id="morse-source-badge" aria-live="polite">Output</span>
+          </div>
+          <textarea id="morse-input" rows="8" placeholder="... --- ... / -. . . -.. / .... . .-.. .--."></textarea>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" id="copy-output">Copy Output</button>
+        <button type="button" id="swap-direction" class="ghost">Swap Direction</button>
+        <button type="button" id="clear-all" class="ghost">Clear All</button>
+      </div>
+      <p id="converter-status" class="status" aria-live="polite">Ready.</p>
+      <p id="converter-warning" class="warning" aria-live="polite"></p>
     </section>
 
     <section class="panel reveal">
-      <h2>Use the Live Converter</h2>
-      <p class="muted">Need instant conversion? Open the main tool and convert in both directions.</p>
-      <a class="button-link" href="/#converter">Open Live Morse Converter</a>
-      <p class="muted">Primary keyword: <strong>how to read morse code</strong> | Intent: learning | Priority: P1</p>
+      <h2>Detailed Explanation</h2>
+      <p>Learning intent needs structure, not only symbol lists. This page combines method, examples, and practice prompts so beginners can build skill steadily.</p>
+      <p>Use short, repeatable sessions. Consistent daily practice with immediate feedback from the converter gives better retention than occasional long sessions.</p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Who This Page Helps</h2>
+      <ul class="example-list">
+        <li>Beginner study plans</li>
+        <li>Daily progressive practice</li>
+        <li>Skill-building for reading and writing Morse</li>
+      </ul>
     </section>
 
     <section class="panel reveal">
@@ -61,7 +139,7 @@
       <ol>
         <li>Start with short symbols: E, T, A, N.</li>
         <li>Practice two-letter and three-letter words.</li>
-        <li>Decode one sentence per day in the live converter.</li>
+        <li>Decode one short sentence daily with the converter.</li>
       </ol>
     </section>
 
@@ -79,11 +157,20 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Practice Prompts</h2>
+      <ul class="example-list">
+        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
+        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
+        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+      </ul>
+    </section>
+
+    <section class="panel reveal">
       <h2>Common Mistakes to Avoid</h2>
       <ul class="example-list">
-        <li>Trying to read full paragraphs too early.</li>
+        <li>Trying full paragraphs too early.</li>
         <li>Ignoring timing and rhythm cues.</li>
-        <li>Not validating decoded text after practice.</li>
+        <li>Skipping validation after decoding.</li>
       </ul>
     </section>
 
@@ -91,19 +178,19 @@
       <h2>Frequently Asked Questions</h2>
       <details>
         <summary>How long does it take to read Morse code?</summary>
-        <p>Most beginners gain basic reading ability with 2-4 weeks of consistent daily practice.</p>
+        <p>Many beginners gain basic reading ability in 2-4 weeks with daily practice.</p>
       </details>
       <details>
         <summary>Should I decode by sound or symbols?</summary>
-        <p>Start with symbols, then add audio rhythm drills for speed.</p>
+        <p>Start with symbols, then add sound drills for speed.</p>
       </details>
       <details>
         <summary>What is the fastest way to improve?</summary>
-        <p>Use short daily sessions and review common patterns repeatedly.</p>
+        <p>Use short daily sessions and repeat common patterns frequently.</p>
       </details>
       <details>
-        <summary>Can the homepage tool help reading practice?</summary>
-        <p>Yes. Decode small chunks and compare expected text immediately.</p>
+        <summary>Can the converter help reading practice?</summary>
+        <p>Yes. Decode small chunks and compare expected text instantly.</p>
       </details>
     </section>
 
@@ -141,8 +228,8 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>Privacy note: This guide is informational. Use the homepage tool for live conversion and output copying.</p>
-      <p>Version: v1.1.0</p>
+      <p>Privacy note: This guide is informational. Converter input stays in your browser session.</p>
+      <p>Version: v1.2.0</p>
     </div>
   </footer>
 </body>

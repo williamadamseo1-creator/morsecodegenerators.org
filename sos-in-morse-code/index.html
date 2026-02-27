@@ -17,15 +17,57 @@
   <meta name="twitter:description" content="Learn SOS in Morse code, what it means, and how to write it correctly as ... --- ... with practical examples.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "SOS in Morse Code: ... --- ... Explained",
-    "url": "https://morsecodegenerators.org/sos-in-morse-code/",
-    "description": "Learn SOS in Morse code, what it means, and how to write it correctly as ... --- ... with practical examples.",
-    "mainEntityOfPage": "https://morsecodegenerators.org/sos-in-morse-code/"
-  }
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "WebPage",
+                       "name":  "SOS in Morse Code: ... --- ... Explained",
+                       "url":  "https://morsecodegenerators.org/sos-in-morse-code/",
+                       "description":  "Learn SOS in Morse code, what it means, and how to write it correctly as ... --- ... with practical examples.",
+                       "mainEntityOfPage":  "https://morsecodegenerators.org/sos-in-morse-code/"
+                   },
+                   {
+                       "@type":  "FAQPage",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What is SOS in Morse code?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "SOS is ... --- ... and is globally recognized as a distress signal."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Should SOS include slashes?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "No. The core sequence does not require slashes."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is SOS still relevant today?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. It is still taught in emergency and communication basics."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can I convert longer SOS messages?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Combine SOS with normal text in the converter."
+                                                                 }
+                                          }
+                                      ]
+                   }
+               ]
+}
   </script>
 </head>
 <body>
@@ -46,14 +88,50 @@
     <section class="hero page-hero reveal">
       <p class="eyebrow">sos in morse code guide</p>
       <h1>SOS in Morse Code: ... --- ... Explained</h1>
-      <p>SOS is the most recognized Morse distress pattern. This guide explains the exact sequence and when it is used.</p>
+      <p>SOS is the most recognized Morse distress pattern. This guide explains the exact sequence and its usage.</p>
+    </section>
+
+    <section id="converter" class="panel reveal">
+      <h2>Live Morse Converter</h2>
+      <p class="panel-lead">Type in either box. The last edited input controls conversion direction automatically.</p>
+      <div class="grid-two">
+        <div class="field-card" id="text-card">
+          <div class="field-head">
+            <label for="text-input">Plain Text</label>
+            <span class="source-badge" id="text-source-badge" aria-live="polite">Source</span>
+          </div>
+          <textarea id="text-input" rows="8" placeholder="Example: SOS NEED HELP AT DOCK 7"></textarea>
+        </div>
+        <div class="field-card" id="morse-card">
+          <div class="field-head">
+            <label for="morse-input">Morse Code</label>
+            <span class="source-badge" id="morse-source-badge" aria-live="polite">Output</span>
+          </div>
+          <textarea id="morse-input" rows="8" placeholder="... --- ... / -. . . -.. / .... . .-.. .--."></textarea>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" id="copy-output">Copy Output</button>
+        <button type="button" id="swap-direction" class="ghost">Swap Direction</button>
+        <button type="button" id="clear-all" class="ghost">Clear All</button>
+      </div>
+      <p id="converter-status" class="status" aria-live="polite">Ready.</p>
+      <p id="converter-warning" class="warning" aria-live="polite"></p>
     </section>
 
     <section class="panel reveal">
-      <h2>Use the Live Converter</h2>
-      <p class="muted">Need instant conversion? Open the main tool and convert in both directions.</p>
-      <a class="button-link" href="/#converter">Open Live Morse Converter</a>
-      <p class="muted">Primary keyword: <strong>sos in morse code</strong> | Intent: phrase | Priority: P1</p>
+      <h2>Detailed Explanation</h2>
+      <p>Phrase-focused pages help users solve common real searches quickly. You get exact sequence examples plus spacing rules so your output remains readable.</p>
+      <p>After copying a phrase result, always run reverse conversion once. This catches spacing mistakes before you share the final Morse message.</p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Who This Page Helps</h2>
+      <ul class="example-list">
+        <li>Emergency phrase validation</li>
+        <li>Personal phrase conversion practice</li>
+        <li>Communication drills with known sentences</li>
+      </ul>
     </section>
 
     <section class="panel reveal">
@@ -61,7 +139,7 @@
       <ol>
         <li>Remember SOS as three dots, three dashes, three dots.</li>
         <li>Keep the sequence continuous for emergency signaling.</li>
-        <li>Use the converter to test phrase-level messages containing SOS.</li>
+        <li>Practice longer SOS phrases in the converter section.</li>
       </ol>
     </section>
 
@@ -76,10 +154,19 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Practice Prompts</h2>
+      <ul class="example-list">
+        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
+        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
+        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+      </ul>
+    </section>
+
+    <section class="panel reveal">
       <h2>Common Mistakes to Avoid</h2>
       <ul class="example-list">
-        <li>Adding unnecessary spaces inside the SOS sequence.</li>
-        <li>Mixing slash separators inside SOS.</li>
+        <li>Adding spaces inside the core SOS sequence.</li>
+        <li>Placing slash separators in the middle of SOS.</li>
         <li>Confusing SOS with random three-letter patterns.</li>
       </ul>
     </section>
@@ -88,19 +175,19 @@
       <h2>Frequently Asked Questions</h2>
       <details>
         <summary>What is SOS in Morse code?</summary>
-        <p>It is ... --- ... and is internationally recognized as a distress signal.</p>
+        <p>SOS is ... --- ... and is globally recognized as a distress signal.</p>
       </details>
       <details>
         <summary>Should SOS include slashes?</summary>
-        <p>No. The core sequence is continuous without word separators.</p>
+        <p>No. The core sequence does not require slashes.</p>
       </details>
       <details>
-        <summary>Is SOS still taught today?</summary>
-        <p>Yes. It remains an important emergency pattern in many training contexts.</p>
+        <summary>Is SOS still relevant today?</summary>
+        <p>Yes. It is still taught in emergency and communication basics.</p>
       </details>
       <details>
         <summary>Can I convert longer SOS messages?</summary>
-        <p>Yes. Use the homepage converter and combine SOS with normal words.</p>
+        <p>Yes. Combine SOS with normal text in the converter.</p>
       </details>
     </section>
 
@@ -138,8 +225,8 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>Privacy note: This guide is informational. Use the homepage tool for live conversion and output copying.</p>
-      <p>Version: v1.1.0</p>
+      <p>Privacy note: This guide is informational. Converter input stays in your browser session.</p>
+      <p>Version: v1.2.0</p>
     </div>
   </footer>
 </body>

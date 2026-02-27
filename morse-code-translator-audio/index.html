@@ -17,15 +17,57 @@
   <meta name="twitter:description" content="Learn how to use Morse code translator audio workflows: convert text, listen for rhythm, and decode by timing patterns.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Morse Code Translator Audio: Learn Rhythm-Based Decoding",
-    "url": "https://morsecodegenerators.org/morse-code-translator-audio/",
-    "description": "Learn how to use Morse code translator audio workflows: convert text, listen for rhythm, and decode by timing patterns.",
-    "mainEntityOfPage": "https://morsecodegenerators.org/morse-code-translator-audio/"
-  }
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "WebPage",
+                       "name":  "Morse Code Translator Audio: Learn Rhythm-Based Decoding",
+                       "url":  "https://morsecodegenerators.org/morse-code-translator-audio/",
+                       "description":  "Learn how to use Morse code translator audio workflows: convert text, listen for rhythm, and decode by timing patterns.",
+                       "mainEntityOfPage":  "https://morsecodegenerators.org/morse-code-translator-audio/"
+                   },
+                   {
+                       "@type":  "FAQPage",
+                       "mainEntity":  [
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Can I practice audio without special hardware?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Yes. Basic phone or laptop audio is enough for beginners."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "What speed is good for beginners?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Start slow and increase only after maintaining high accuracy."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Is audio better than visual training?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "Use both. Visual builds memory, audio improves recognition speed."
+                                                                 }
+                                          },
+                                          {
+                                              "@type":  "Question",
+                                              "name":  "Does this page replace the converter?",
+                                              "acceptedAnswer":  {
+                                                                     "@type":  "Answer",
+                                                                     "text":  "No. This guide works best with the converter section on this page."
+                                                                 }
+                                          }
+                                      ]
+                   }
+               ]
+}
   </script>
 </head>
 <body>
@@ -46,22 +88,58 @@
     <section class="hero page-hero reveal">
       <p class="eyebrow">morse code translator audio guide</p>
       <h1>Morse Code Translator Audio: Learn Rhythm-Based Decoding</h1>
-      <p>Audio-based Morse practice improves speed because you train timing recognition, not only visual symbol matching.</p>
+      <p>Audio-based Morse practice improves speed because you learn rhythm recognition instead of visual pattern only.</p>
+    </section>
+
+    <section id="converter" class="panel reveal">
+      <h2>Live Morse Converter</h2>
+      <p class="panel-lead">Type in either box. The last edited input controls conversion direction automatically.</p>
+      <div class="grid-two">
+        <div class="field-card" id="text-card">
+          <div class="field-head">
+            <label for="text-input">Plain Text</label>
+            <span class="source-badge" id="text-source-badge" aria-live="polite">Source</span>
+          </div>
+          <textarea id="text-input" rows="8" placeholder="Example: SOS NEED HELP AT DOCK 7"></textarea>
+        </div>
+        <div class="field-card" id="morse-card">
+          <div class="field-head">
+            <label for="morse-input">Morse Code</label>
+            <span class="source-badge" id="morse-source-badge" aria-live="polite">Output</span>
+          </div>
+          <textarea id="morse-input" rows="8" placeholder="... --- ... / -. . . -.. / .... . .-.. .--."></textarea>
+        </div>
+      </div>
+      <div class="button-row">
+        <button type="button" id="copy-output">Copy Output</button>
+        <button type="button" id="swap-direction" class="ghost">Swap Direction</button>
+        <button type="button" id="clear-all" class="ghost">Clear All</button>
+      </div>
+      <p id="converter-status" class="status" aria-live="polite">Ready.</p>
+      <p id="converter-warning" class="warning" aria-live="polite"></p>
     </section>
 
     <section class="panel reveal">
-      <h2>Use the Live Converter</h2>
-      <p class="muted">Need instant conversion? Open the main tool and convert in both directions.</p>
-      <a class="button-link" href="/#converter">Open Live Morse Converter</a>
-      <p class="muted">Primary keyword: <strong>morse code translator audio</strong> | Intent: media | Priority: P1</p>
+      <h2>Detailed Explanation</h2>
+      <p>Media intent queries usually come from audio or image decoding tasks. This page explains practical workflows for converting non-text clues into valid Morse input.</p>
+      <p>When the source is noisy or blurry, decode in small chunks first. Short chunk validation reduces error rate and speeds up final message reconstruction.</p>
+    </section>
+
+    <section class="panel reveal">
+      <h2>Who This Page Helps</h2>
+      <ul class="example-list">
+        <li>Decode from image clues</li>
+        <li>Rhythm-based audio practice</li>
+        <li>Cross-checking media-transcribed symbols</li>
+      </ul>
     </section>
 
     <section class="panel reveal">
       <h2>How to Use This Page</h2>
       <ol>
-        <li>Convert a short phrase in the homepage tool.</li>
-        <li>Play each symbol with consistent dot and dash timing.</li>
-        <li>Decode by rhythm and compare against text output.</li>
+        <li>Convert short words using the tool below.</li>
+        <li>Read symbols as short and long timing beats.</li>
+        <li>Decode by rhythm and compare against expected text.</li>
       </ol>
     </section>
 
@@ -76,11 +154,20 @@
     </section>
 
     <section class="panel reveal">
+      <h2>Practice Prompts</h2>
+      <ul class="example-list">
+        <li>Convert this phrase to Morse: HELLO TEAM READY</li>
+        <li>Decode this Morse: ... . . / -.-- --- ..- / ... --- --- -.</li>
+        <li>Create a custom sentence, convert it, then decode back to validate.</li>
+      </ul>
+    </section>
+
+    <section class="panel reveal">
       <h2>Common Mistakes to Avoid</h2>
       <ul class="example-list">
-        <li>Changing speed too quickly between attempts.</li>
-        <li>Not separating letter rhythm from word rhythm.</li>
-        <li>Practicing with long sentences before mastering short words.</li>
+        <li>Changing speed too quickly while practicing.</li>
+        <li>Ignoring letter rhythm boundaries.</li>
+        <li>Starting with long sentences too early.</li>
       </ul>
     </section>
 
@@ -88,19 +175,19 @@
       <h2>Frequently Asked Questions</h2>
       <details>
         <summary>Can I practice audio without special hardware?</summary>
-        <p>Yes. Basic phone or laptop audio is enough for beginner drills.</p>
+        <p>Yes. Basic phone or laptop audio is enough for beginners.</p>
       </details>
       <details>
         <summary>What speed is good for beginners?</summary>
-        <p>Start slow and increase only after accuracy stays high.</p>
+        <p>Start slow and increase only after maintaining high accuracy.</p>
       </details>
       <details>
         <summary>Is audio better than visual training?</summary>
-        <p>Use both. Visual helps memorization, audio improves real-time recognition.</p>
+        <p>Use both. Visual builds memory, audio improves recognition speed.</p>
       </details>
       <details>
         <summary>Does this page replace the converter?</summary>
-        <p>No. Use this guide with the main converter for best results.</p>
+        <p>No. This guide works best with the converter section on this page.</p>
       </details>
     </section>
 
@@ -138,8 +225,8 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>Privacy note: This guide is informational. Use the homepage tool for live conversion and output copying.</p>
-      <p>Version: v1.1.0</p>
+      <p>Privacy note: This guide is informational. Converter input stays in your browser session.</p>
+      <p>Version: v1.2.0</p>
     </div>
   </footer>
 </body>
